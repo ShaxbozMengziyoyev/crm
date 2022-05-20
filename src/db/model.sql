@@ -5,7 +5,7 @@ CREATE DATABASE crm;
 CREATE TABLE group_types (
   group_type_id serial not null PRIMARY KEY,
   group_type_name varchar(64) not null
-);
+); --- o'chirish kere
 
 CREATE TABLE courses (
   course_id serial not null PRIMARY KEY,
@@ -48,7 +48,7 @@ CREATE TABLE groups (
   group_hour_duration int not null,
   group_price int not null,
   course_id int REFERENCES courses(course_id),
-  group_type_id int REFERENCES group_types(group_type_id),
+  group_type varchar(64) not null,
   worker_id int REFERENCES workers(worker_id)
 );
 
